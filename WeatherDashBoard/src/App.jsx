@@ -1,10 +1,18 @@
 import Page from "./Page";
-import { WeatherProvider } from "./provider";
+import {
+  FavouriteProvider,
+  LocationProvider,
+  WeatherProvider,
+} from "./provider";
 
 export default function App() {
   return (
-    <WeatherProvider>
-      <Page />
-    </WeatherProvider>
+    <LocationProvider>
+      <WeatherProvider>
+        <FavouriteProvider>
+          <Page />
+        </FavouriteProvider>
+      </WeatherProvider>
+    </LocationProvider>
   );
 }
