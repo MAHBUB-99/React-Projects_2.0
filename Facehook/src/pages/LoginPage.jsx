@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import Auth_Illustration from "../assets/images/auth_illustration.png";
+import LoginForm from "../components/auth/LoginForm";
 export default function LoginPage() {
   return (
     <main className="flex min-h-screen items-center justify-center bg-deepDark py-8">
@@ -11,10 +13,54 @@ export default function LoginPage() {
               alt="auth_illustration"
             />
             <div>
-              <h1 className="mb-3 text-4xl font-bold lg:text-[40px]">Facehook</h1>
+              <h1 className="mb-3 text-4xl font-bold lg:text-[40px]">
+                Facehook
+              </h1>
               <p className="max-w-[452px] text-gray-600/95 lg:text-lg">
                 Create a social media app with features like, showing the post,
                 post details, reactions, comments and profile.
+              </p>
+            </div>
+          </div>
+          <div className="card">
+              {/* <div className="form-control">
+                <label className="auth-label" for="email">
+                  Email
+                </label>
+                <input
+                  className="auth-input"
+                  name="email"
+                  type="email"
+                  id="email"
+                />
+              </div>
+              <div className="form-control">
+                <label className="auth-label" for="email">
+                  Password
+                </label>
+                <input
+                  className="auth-input"
+                  name="password"
+                  type="password"
+                  id="password"
+                />
+              </div>
+              <button
+                className="auth-input bg-lwsGreen font-bold text-deepDark transition-all hover:opacity-90"
+                type="submit"
+              >
+                Login
+              </button> */}
+              <LoginForm />
+            <div className="py-4 lg:py-6">
+              <p className="text-center text-xs text-gray-600/95 lg:text-sm">
+                Don’t have account?
+                <Link
+                  className="text-white transition-all hover:text-lwsGreen hover:underline"
+                  to="/register"
+                >
+                  Create New
+                </Link>
               </p>
             </div>
           </div>
