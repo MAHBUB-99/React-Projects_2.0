@@ -1,5 +1,5 @@
-export default function HomePage(){
-    return (
-        <div>Home Page</div>
-    );
+import Header from "../components/common/Header";
+
+export default function HomePage() {
+  return <Header />;
 }

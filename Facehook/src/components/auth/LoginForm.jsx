@@ -1,14 +1,21 @@
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import Field from "../common/Field";
+
 export default function LoginForm() {
+
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+
   const submitForm = (formData) => {
     console.log(formData);
+    navigate("/");
   };
+  
   return (
     <form
       className="border-b border-[#3f3f3f] pb-10 lg:pb-[60px]"
