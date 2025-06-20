@@ -1,3 +1,7 @@
+# Deployment
+
+https://react-projects-2-0-facehook.vercel.app/
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
