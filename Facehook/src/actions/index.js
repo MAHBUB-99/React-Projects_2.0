@@ -6,5 +6,4 @@ export const actions = {
         "USER_DATA_EDITED": "PROFILE_USER_DATA_EDITED",
         "IMAGE_UPDATED": "PROFILE_IMAGE_UPDATED",
     }
-};
-
+}

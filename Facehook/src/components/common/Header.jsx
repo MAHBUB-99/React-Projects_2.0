@@ -11,10 +11,7 @@ export default function Header() {
   const { auth } = useAuth();
   const { state } = useProfile();
   const user = state?.user ?? auth?.user;
-  // console.log(state.user);
-  // console.log(user)
-  // console.log(`${import.meta.env.VITE_SERVER_BASE_URL}`);
-  // console.log(`${user}`);
+
   return (
     <nav className="sticky top-0 z-50 border-b border-[#3F3F3F] bg-[#1E1F24] py-4">
       <div className="container flex flex-col items-center justify-between gap-6 sm:flex-row">
@@ -40,7 +37,7 @@ export default function Header() {
               {user?.firstName} {user?.lastName}
             </span>
             <img
-              className="max-h-[32px] max-w-[32px] lg:max-h-[44px] lg:max-w-[44px]"
+              className="max-h-[32px] max-w-[32px] lg:max-h-[44px] lg:max-w-[44px] rounded-full"
               src={`${import.meta.env.VITE_SERVER_BASE_URL}/${user?.avatar}`}
               alt=""
             />
