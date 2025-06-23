@@ -1,8 +1,10 @@
 import { useEffect } from "react";
+import { actions } from "../actions";
+import MyPosts from "../components/profile/MyPosts";
+import ProfileInfo from "../components/profile/ProfileInfo";
 import { useAuth } from "../hooks/useAuth";
 import useAxios from "../hooks/useAxios";
 import useProfile from "../hooks/useProfile";
-import { actions } from "../actions";
 
 export default function ProfilePage() {
   const { state, dispatch } = useProfile();
@@ -10,7 +12,7 @@ export default function ProfilePage() {
   const { auth } = useAuth();
 
   useEffect(() => {
-    dispatch({ type: actions.profile.DATA_FETCHING});
+    dispatch({ type: actions.profile.DATA_FETCHING });
     const fetchProfile = async () => {
       try {
         const response = await api.get(
@@ -24,7 +26,10 @@ export default function ProfilePage() {
           });
         }
       } catch (error) {
-        dispatch({type: actions.profile.DATA_FETCH_ERROR, error: error.message});
+        dispatch({
+          type: actions.profile.DATA_FETCH_ERROR,
+          error: error.message,
+        });
         console.error("Error fetching profile data:", error);
       }
     };
@@ -34,11 +39,9 @@ export default function ProfilePage() {
   if (state?.loading) return <div>Fetching your profile data...</div>;
 
   return (
-    <div>
-      <p>
-        Welcome {state?.user?.firstName} {state?.user?.lastName}{" "}
-      </p>
-      <p>You have currently {state?.posts?.length} Posts</p>
-    </div>
+    <>
+      <ProfileInfo />
+      <MyPosts />
+    </>
   );
 }

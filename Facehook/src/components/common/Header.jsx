@@ -11,7 +11,8 @@ export default function Header() {
   const { auth } = useAuth();
   const { state } = useProfile();
   const user = state?.user ?? auth?.user;
-  console.log(state.user);
+  // console.log(state.user);
+  // console.log(user)
   // console.log(`${import.meta.env.VITE_SERVER_BASE_URL}`);
   // console.log(`${user}`);
   return (
@@ -40,7 +41,7 @@ export default function Header() {
             </span>
             <img
               className="max-h-[32px] max-w-[32px] lg:max-h-[44px] lg:max-w-[44px]"
-              src={`${import.meta.env.VITE_SERVER_BASE_URL}/${state?.user?.avatar}`}
+              src={`${import.meta.env.VITE_SERVER_BASE_URL}/${user?.avatar}`}
               alt=""
             />
           </Link>
