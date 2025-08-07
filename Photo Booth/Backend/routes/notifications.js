@@ -11,6 +11,10 @@ router.get("/", auth, catchAsync(notificationController.getNotifications));
 router.patch("/:id/read", auth, catchAsync(notificationController.markAsRead));
 
 // Mark a notification as unread
-router.patch("/:id/unread", auth, catchAsync(notificationController.markAsUnread));
+router.patch(
+  "/:id/unread",
+  auth,
+  catchAsync(notificationController.markAsUnread)
+);
 
 module.exports = router;

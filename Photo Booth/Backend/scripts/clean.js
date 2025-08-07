@@ -10,7 +10,14 @@ const cleanDatabase = () => {
   console.log("🧹 Cleaning database files...");
 
   const dataDir = path.join(__dirname, "../data");
-  const dbFiles = ["users.db", "posts.db", "comments.db", "notifications.db", "pokes.db", "tokens.db"];
+  const dbFiles = [
+    "users.db",
+    "posts.db",
+    "comments.db",
+    "notifications.db",
+    "pokes.db",
+    "tokens.db",
+  ];
 
   let removedCount = 0;
 
