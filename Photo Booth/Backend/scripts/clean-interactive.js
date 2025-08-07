@@ -17,7 +17,14 @@ const cleanDatabase = () => {
   console.log("🧹 Cleaning database files...");
 
   const dataDir = path.join(__dirname, "../data");
-  const dbFiles = ["users.db", "posts.db", "comments.db", "notifications.db", "pokes.db", "tokens.db"];
+  const dbFiles = [
+    "users.db",
+    "posts.db",
+    "comments.db",
+    "notifications.db",
+    "pokes.db",
+    "tokens.db",
+  ];
 
   let removedCount = 0;
 
@@ -73,8 +80,17 @@ const showStats = () => {
   console.log("📊 Current Status:");
 
   // Check database files
-  const dbFiles = ["users.db", "posts.db", "comments.db", "notifications.db", "pokes.db", "tokens.db"];
-  const existingDbFiles = dbFiles.filter((file) => fs.existsSync(path.join(dataDir, file)));
+  const dbFiles = [
+    "users.db",
+    "posts.db",
+    "comments.db",
+    "notifications.db",
+    "pokes.db",
+    "tokens.db",
+  ];
+  const existingDbFiles = dbFiles.filter((file) =>
+    fs.existsSync(path.join(dataDir, file))
+  );
   console.log(`   Database files: ${existingDbFiles.length}/${dbFiles.length}`);
   if (existingDbFiles.length > 0) {
     console.log(`   Files found: ${existingDbFiles.join(", ")}`);
@@ -84,7 +100,9 @@ const showStats = () => {
   let uploadCount = 0;
   if (fs.existsSync(uploadsDir)) {
     const files = fs.readdirSync(uploadsDir);
-    uploadCount = files.filter((file) => fs.statSync(path.join(uploadsDir, file)).isFile()).length;
+    uploadCount = files.filter((file) =>
+      fs.statSync(path.join(uploadsDir, file)).isFile()
+    ).length;
   }
   console.log(`   Uploaded files: ${uploadCount}`);
   console.log("");
@@ -95,7 +113,9 @@ const main = async () => {
 
   showStats();
 
-  const answer = await question("❓ Are you sure you want to clean all data? This cannot be undone! (yes/no): ");
+  const answer = await question(
+    "❓ Are you sure you want to clean all data? This cannot be undone! (yes/no): "
+  );
 
   if (answer.toLowerCase() !== "yes" && answer.toLowerCase() !== "y") {
     console.log("❌ Cleanup cancelled");

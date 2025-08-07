@@ -8,7 +8,9 @@ export default function HomePage() {
     <>
       {/* <Header /> */}
       <p>Home page</p>
-      <Link to="/me">Go to <u>Profile Page</u></Link>
+      <Link to="/me">
+        Go to <u>Profile Page</u>
+      </Link>
     </>
   );
 }

@@ -11,7 +11,7 @@ export default function App() {
     <>
       <ThemeContext.Provider value={{ darkMode, setDarkMode }}>
         <MovieContext.Provider value={{ cartData, setCartData }}>
-          <div className={`h-full w-full ${darkMode? "dark" : ""}`}>
+          <div className={`h-full w-full ${darkMode ? "dark" : ""}`}>
             <Headers />
             <main>
               <div className="container grid lg:grid-cols-[218px_1fr] gap-[3.5rem]">
